@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="ProjetC.AdministrateurPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProjetC"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    DataContext="{Binding Source={StaticResource Locator}, Path=Admin}"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Attention!" Foreground="#0066CC" Margin="40,60,70,39" TextWrapping="Wrap" FontSize="33.333" Width="250" />
+        <TextBlock Text="Cette partie de l'application est réservée à l'administrateur!" Foreground="White" Grid.Row="1" TextWrapping="Wrap" Margin="232,21,-127,77"/>
+        <TextBlock Text="Veuillez entrer le mot de passe pour continuer : " TextWrapping="Wrap" Foreground="White" Grid.Row="1" Margin="258,119,-163,10"/>
+        <PasswordBox Password= "{Binding MotDePasse, Mode=TwoWay}" Foreground="White" Background="Gray" Grid.Row="1" Margin="278,171,440,45" BorderBrush="White"/>
+        <Button Background="#0066CC"  Content="Admin" Foreground="White" Grid.Row="2" Margin="232,172,0,37" Height="39" Width="119" Command="{Binding GoToPageAdminCommand}"/>
+        <Button Background="#0066CC"  Content="Accueil" Foreground="White" Grid.Row="2" Margin="503,172,0,39" Height="39" Width="119" Command="{Binding ButtonAccueil}"/>
+    </Grid>
+</Page>
